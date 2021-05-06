@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordering</title>
+</head>
+<body>
+    <h1>Add items</h1>
+
+    <div>
+        <ul id="validations">
+
+        </ul>
+    </div>
+
+    <form>
+        <label for="Name"></label>
+        <input id="Name" type="text">
+        <br>
+
+        <label for="price"></label>
+        <input id="price" type="text">
+        <br>
+
+        <label for="type"></label>
+        <select id="type">
+            <option value="">please pick a product type</option>
+            <option value="E">E - Electronics</option>
+            <option value="F">F - Fruits</option>
+            <option value="D">D - Dairy</option>
+            <option value="V">V - Vegies</option>
+            <option value="M">M - meats</option>
+            <option value="T">T - toys</option>
+        </select>
+
+        <label for="shipping">
+        <select id="shipping">
+            <option value="2">Product will take two days to ship</option>
+            <option value="3">Product will take three days to ship</option>
+            <option value="4">Product will take a week to ship</option>        
+        </select>
+        </label>
+
+        <input type="checkbox" id = gift>
+        <label for="gift">Is gift?</label>
+        <br>
+
+        <input type="button" value="Add new item">
+    </form>
+    <div id="display">
+
+    </div>
+    
+</body>
+</html>
