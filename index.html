@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordering</title>
+    <link rel="stylesheet" href="/Web-Form-and-JavaScript-Objects-/css/main.css">
 </head>
 <body>
     <h1>Add items</h1>
@@ -15,15 +16,15 @@
     </div>
 
     <form>
-        <label for="Name"></label>
+        <label for="Name">Item Name:</label>
         <input id="Name" type="text">
         <br>
 
-        <label for="price"></label>
+        <label for="price">Price:</label>
         <input id="price" type="text">
         <br>
 
-        <label for="type"></label>
+        <label for="type">Product Type:</label>
         <select id="type">
             <option value="">please pick a product type</option>
             <option value="E">E - Electronics</option>
@@ -34,13 +35,14 @@
             <option value="T">T - toys</option>
         </select>
 
-        <label for="shipping">
+        <label for="shipping">Shiping type:</label>
         <select id="shipping">
+            <option value="">Shipping time</option>
             <option value="2">Product will take two days to ship</option>
             <option value="3">Product will take three days to ship</option>
             <option value="4">Product will take a week to ship</option>        
         </select>
-        </label>
+        
 
         <input type="checkbox" id = gift>
         <label for="gift">Is gift?</label>
