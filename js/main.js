@@ -3,26 +3,26 @@ var item = (function () {
     }
     return item;
 }());
-function getById(id) {
-    return document.getElementById(id);
-}
 window.onload = function () {
     var addBtn = document.querySelector("input[type=button]");
     addBtn.onclick = addItem;
 };
-function clearAllErrors() {
-    var errSummary = getById("validation-summary");
-    errSummary.innerText = "";
-}
 function addItem() {
     console.log("Added Item was called");
     clearAllErrors();
     if (isAllDataValid()) {
-        var item_1 = getItem();
-        displayItem(item_1);
+        var t1 = getItems();
+        displayItem(t1);
     }
 }
-function getItem() {
+function clearAllErrors() {
+    var errSummary = getById("validation");
+    errSummary.innerText = "";
+}
+function getById(id) {
+    return document.getElementById(id);
+}
+function getItems() {
     var product = new item();
     var NameInput = getById("Name");
     product.Name = NameInput.value;
@@ -42,30 +42,17 @@ function displayItem(myItem) {
     var itemHeading = document.createElement("h2");
     itemHeading.innerText = myItem.Name;
     var itemInfo = document.createElement("p");
-    var gameItemDisplay = "";
+    var itemDisplay = "";
     if (myItem.IsGift) {
-        gameItemDisplay = "This is a gift.";
+        itemDisplay = "This is a gift.";
     }
     else {
-        gameItemDisplay = "shipping to your adress soon";
+        itemDisplay = "shipping to your adress soon";
     }
     itemInfo.innerText = myItem.Name + " has a Type of " + myItem.Type + ". " +
-        ("It costs $" + myItem.Price.toFixed(2) + ". " + gameItemDisplay);
+        ("It costs $" + myItem.Price.toFixed(2) + ". " + itemDisplay);
     displayDiv.appendChild(itemHeading);
     displayDiv.appendChild(itemInfo);
-}
-function addErrorMessage(errMsg) {
-    var errSummary = getById("validation-summary");
-    var errItem = document.createElement("li");
-    errItem.innerText = errMsg;
-    errSummary.appendChild(errItem);
-}
-function addErrorMsgWithCustomClass(errMsg, cssClass) {
-    var errSummary = getById("validation-summary");
-    var errItem = document.createElement("li");
-    errItem.classList.add(cssClass);
-    errItem.innerText = errMsg;
-    errSummary.appendChild(errItem);
 }
 function isAllDataValid() {
     var isValid = true;
@@ -91,4 +78,18 @@ function isAllDataValid() {
         addErrorMsgWithCustomClass("You must choose a shipping type!", "shipping-error");
     }
     return isValid;
+}
+
+function addErrorMessage(errMsg) {
+    var errSummary = getById("validation-summary");
+    var errItem = document.createElement("li");
+    errItem.innerText = errMsg;
+    errSummary.appendChild(errItem);
+}
+function addErrorMsgWithCustomClass(errMsg, cssClass) {
+    var errSummary = getById("validation-summary");
+    var errItem = document.createElement("li");
+    errItem.classList.add(cssClass);
+    errItem.innerText = errMsg;
+    errSummary.appendChild(errItem);
 }
